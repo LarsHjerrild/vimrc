@@ -1,5 +1,13 @@
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd vimenter setup.sh NERDTree
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-colorscheme pink-moon
-set background=dark
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+
+	Plug 'scrooloose/nerdtree'
+
+call plug#end()
+
+autocmd vimenter * NERDTree
