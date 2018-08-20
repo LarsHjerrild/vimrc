@@ -7,7 +7,7 @@ endif
 call plug#begin()
 
 	Plug 'scrooloose/nerdtree'
-
+	Plug 'valloric/youcompleteme'
 call plug#end()
 
 autocmd vimenter * NERDTree
